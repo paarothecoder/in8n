@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>maya.ai — Register</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-[#0b0c10] text-white font-sans min-h-screen">
+
+<!-- glow -->
+<div class="fixed inset-0 -z-10 overflow-hidden">
+  <div class="absolute top-[-300px] left-1/2 -translate-x-1/2 w-[700px] sm:w-[900px] h-[700px] sm:h-[900px] bg-indigo-600/30 blur-[160px] rounded-full"></div>
+  <div class="absolute bottom-[-300px] right-[-100px] w-[500px] sm:w-[700px] h-[500px] sm:h-[700px] bg-cyan-500/20 blur-[140px] rounded-full"></div>
+</div>
+
+<div class="flex items-center justify-center min-h-screen px-4 py-10">
+
+  <div class="w-full max-w-md">
+
+    <div class="text-center mb-6 sm:mb-8">
+      <h1 class="text-3xl sm:text-4xl font-semibold">Maya.ai</h1>
+      <p class="text-slate-400 mt-2 text-sm sm:text-base">
+        Create your account
+      </p>
+    </div>
+
+    <div class="bg-white/[0.05] backdrop-blur-xl border border-white/10 rounded-2xl p-5 sm:p-8 shadow-2xl">
+
+      <h2 class="text-xl sm:text-2xl font-semibold">Sign up</h2>
+      <p class="text-slate-400 mb-6 text-sm">Join the platform</p>
+
+      <form method="POST" class="space-y-4">
+        {% csrf_token %}
+
+        <input type="text" placeholder="Full name"
+          class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none">
+
+        <input type="email" placeholder="Email"
+          class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none">
+
+        <input type="password" placeholder="Password"
+          class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none">
+
+        <input type="password" placeholder="Confirm password"
+          class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none">
+
+        <button class="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-500 font-semibold hover:opacity-90">
+          Create account
+        </button>
+      </form>
+
+      <p class="text-center text-sm text-slate-400 mt-6">
+        Already have an account?
+        <a href="{% url 'login' %}" class="text-indigo-400 hover:underline">
+          Sign in
+        </a>
+      </p>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

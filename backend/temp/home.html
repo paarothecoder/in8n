@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maya.ai</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+body { font-family: Inter, sans-serif; }
+</style>
+</head>
+
+<body class="bg-[#0b0c10] text-white">
+
+<!-- glow background -->
+<div class="fixed inset-0 -z-10 overflow-hidden">
+  <div class="absolute top-[-300px] left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-indigo-600/30 blur-[180px] rounded-full rounded-full"></div>
+  <div class="absolute bottom-[-300px] right-[-200px] w-[700px] h-[700px] bg-cyan-500/20 blur-[160px] rounded-full"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+  <h1 class="text-xl font-semibold">Maya.ai</h1>
+
+  <div class="space-x-6 text-sm">
+      <a href="{% url 'login' %}">Login</a>
+      <a href="{% url 'register' %}" class="text-indigo-400">Register</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="max-w-6xl mx-auto px-6 pt-16 pb-20 text-center">
+  <h2 class="text-4xl sm:text-6xl font-semibold leading-tight">
+    Train AI using  
+    <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+      real user intelligence
+    </span>
+  </h2>
+
+  <p class="text-slate-400 mt-6 max-w-2xl mx-auto text-lg">
+    Maya.ai helps companies collect structured user interaction data  
+    and turn it into high-quality training signals for large language models.
+    Build smarter AI products with real human context.
+  </p>
+
+  <div class="mt-10 space-x-4">
+      <a href="{% url 'register' %}"
+        class="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-500 font-semibold">
+        Get started
+      </a>
+
+      <a href="{% url 'login' %}"
+        class="px-6 py-3 rounded-xl border border-white/10 bg-white/5">
+        Login
+      </a>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="max-w-6xl mx-auto px-6 py-16">
+  <h3 class="text-3xl font-semibold mb-12 text-center">
+    What we actually do
+  </h3>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="bg-white/[0.04] border border-white/10 p-6 rounded-2xl">
+      <h4 class="text-lg font-semibold mb-3">Collect interaction data</h4>
+      <p class="text-slate-400 text-sm">
+        Capture real user prompts, responses, and feedback signals.
+        Structured. Clean. Ready for model training.
+      </p>
+    </div>
+
+    <div class="bg-white/[0.04] border border-white/10 p-6 rounded-2xl">
+      <h4 class="text-lg font-semibold mb-3">Refine & label</h4>
+      <p class="text-slate-400 text-sm">
+        Convert raw conversations into structured training datasets
+        designed specifically for large language models.
+      </p>
+    </div>
+
+    <div class="bg-white/[0.04] border border-white/10 p-6 rounded-2xl">
+      <h4 class="text-lg font-semibold mb-3">Continuous improvement</h4>
+      <p class="text-slate-400 text-sm">
+        Improve AI systems using real human feedback loops.
+        Better data means better intelligence.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="max-w-6xl mx-auto px-6 py-20 text-center">
+  <h3 class="text-3xl font-semibold mb-6">
+    AI improves when humans are in the loop
+  </h3>
+
+  <p class="text-slate-400 max-w-3xl mx-auto">
+    Most AI systems are static after deployment. Maya.ai enables dynamic,
+    feedback-driven training pipelines powered by real user interaction.
+    We help you close the loop between usage and model intelligence.
+  </p>
+</section>
+
+<!-- CTA -->
+<section class="text-center py-20">
+  <h3 class="text-3xl font-semibold mb-4">
+    Build AI that learns from real users
+  </h3>
+
+  <p class="text-slate-400 mb-8">
+    Start collecting meaningful training data today.
+  </p>
+
+  <a href="{% url 'register' %}"
+    class="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-500 font-semibold">
+    Create account
+  </a>
+</section>
+
+<footer class="text-center text-slate-600 text-sm pb-10">
+  © 2026 Maya.ai — Intelligence infrastructure
+</footer>
+
+</body>
+</html>

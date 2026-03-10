@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>maya.ai — Login</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ["Inter", "sans-serif"] },
+    }
+  }
+}
+</script>
+</head>
+
+<body class="bg-[#0b0c10] text-white font-sans min-h-screen">
+
+<!-- glow bg -->
+<div class="fixed inset-0 -z-10 overflow-hidden">
+  <div class="absolute top-[-300px] left-1/2 -translate-x-1/2 w-[700px] sm:w-[900px] h-[700px] sm:h-[900px] bg-indigo-600/30 blur-[160px] rounded-full"></div>
+  <div class="absolute bottom-[-300px] right-[-100px] w-[500px] sm:w-[700px] h-[500px] sm:h-[700px] bg-cyan-500/20 blur-[140px] rounded-full"></div>
+</div>
+
+<div class="flex items-center justify-center min-h-screen px-4 py-10">
+
+  <div class="w-full max-w-md">
+
+    <!-- logo -->
+    <div class="text-center mb-6 sm:mb-8">
+      <h1 class="text-3xl sm:text-4xl font-semibold">Maya.ai</h1>
+      <p class="text-slate-400 mt-2 text-sm sm:text-base">
+        For a safe intelligence
+      </p>
+    </div>
+
+    <!-- card -->
+    <div class="bg-white/[0.05] backdrop-blur-xl border border-white/10 rounded-2xl p-5 sm:p-8 shadow-2xl">
+
+      <h2 class="text-xl sm:text-2xl font-semibold">Welcome back</h2>
+      <p class="text-slate-400 mb-6 text-sm">Login to continue</p>
+
+      <form method="POST" class="space-y-4">
+        {% csrf_token %}
+
+        <div>
+          <label class="text-sm text-slate-400">Email</label>
+          <input type="email"
+            class="mt-1 w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none">
+        </div>
+
+        <div>
+          <label class="text-sm text-slate-400">Password</label>
+          <input type="password"
+            class="mt-1 w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none">
+        </div>
+
+        <button class="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-500 font-semibold hover:opacity-90">
+          Sign in
+        </button>
+      </form>
+
+      <div class="my-6 flex items-center gap-3 text-slate-500 text-sm">
+        <div class="flex-1 h-px bg-white/10"></div>
+        or
+        <div class="flex-1 h-px bg-white/10"></div>
+      </div>
+
+      <button class="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10">
+        Continue with Google
+      </button>
+
+      <p class="text-center text-sm text-slate-400 mt-6">
+        Don’t have an account?
+        <a href="{% url 'register' %}" class="text-indigo-400 hover:underline">
+          Create one
+        </a>
+      </p>
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
